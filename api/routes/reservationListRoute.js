@@ -7,9 +7,7 @@ module.exports = function(app) {
     .get(reservationListController.list_all)
     .post(reservationListController.create);
 
-//   app
-//     .route("/reservations/:reservationId")
-//     .get(reservationListController.getOne)
-//     .put(reservationListController.update)
-//     .delete(reservationListController.delete);
+  app
+    .route("/reservations/:reservationId")
+    .delete(reservationListController.deleteOne);
 };

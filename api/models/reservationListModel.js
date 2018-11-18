@@ -1,22 +1,26 @@
-const reservations =  [
-    {
-        "id": 1,
-        "reservingUser": "John",
-        "reservingFrom": "Monday",
-        "reservingTo": "Wednesday"
-    },
-    {
-        "id": 2,
-        "reservingUser": "Jane",
-        "reservingFrom": "Monday",
-        "reservingTo": "Wednesday"
-    },
+let reservations = [
+  {
+    id: 1,
+    reservingUser: "John",
+    reservingFrom: "Monday",
+    reservingTo: "Wednesday"
+  },
+  {
+    id: 2,
+    reservingUser: "Jane",
+    reservingFrom: "Monday",
+    reservingTo: "Wednesday"
+  }
 ];
 
 exports.findAll = async function() {
-    return reservations;
+  return reservations;
 };
 
-exports.add = function (record) {
-    reservations.push(record)
-}
+exports.add = function(record) {
+  reservations.push(record);
+};
+
+exports.deleteById = function(idToRemove) {
+    reservations = reservations.filter(reservation => reservation.id !== idToRemove);
+};
